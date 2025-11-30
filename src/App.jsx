@@ -122,7 +122,7 @@ function App() {
           className="w-72 h-72 rounded-full overflow-hidden border-4 border-blue-400 shadow-xl overflow-visible mt-10 md:mt-0 relative"
         >
           <img
-            src="/Norah.png"
+            src="./Norah.png"
             alt="Profile"
             className="absolute bottom-[-5px] left-1/2 -translate-x-1/2 scale-[1.25] object-contain z-10"
           />
