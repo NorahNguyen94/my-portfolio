@@ -7,14 +7,22 @@ import SkillCard from "./components/SkillCard";
 import { SiTicktick } from "react-icons/si";
 import { LiaLinkedin } from "react-icons/lia";
 import { MdEmail } from "react-icons/md";
+import avatar from "./assets/Norah.png";
 import logo from "./assets/NN.png";
+import intershipImage from "./assets/medical_system_image.PNG";
+import chatVideoImage from "./assets/chat-system.jpg";
+import tetrisGameImage from "./assets/tetris-game.png";
+import shoesReviewImage from "./assets/review-website.png";
+import studyWithMeImage from "./assets/study-with-me.jpg";
+import restaurantWebsiteImage from "./assets/restaurant-website.png";
+import fakeStoreImage from "./assets/fake-store.png";
 
 function App() {
   const projects = [
     {
       title: "Chat Video System",
       desc: "A full-stack web application that enables users to communicate through video calls and text messaging. It features user authentication, real-time video conferencing, and instant messaging capabilities, providing a seamless communication experience.",
-      image: "/chat-system.jpg",
+      image: chatVideoImage,
       github: "https://github.com/NorahNguyen94",
       techs: ["Angular", "Express.js", "Node.js", "PeerJS", "Socket.io", "MongDB"],
       isPrivate: true,
@@ -22,7 +30,7 @@ function App() {
     {
       title: "Tetris Game",
       desc: "Interactive desktop puzzle game with adjustable grid size and scoring system. Players rotate and position falling tetrominoes to complete lines and increase their score. The game also supports a two-player mode with both AI and external multiplayer options for a more competitive experience.",
-      image: "/tetris-game.png",
+      image: tetrisGameImage,
       github: "https://github.com/NorahNguyen94/game-javafx",
       techs: ["Java", "JavaFX", "Maven", "CSS"],
       isPrivate: true,
@@ -30,7 +38,7 @@ function App() {
     {
       title: "Shoes Review Website",
       desc: "A web application built using Laravel that allows users to review and rate different shoes. Users can submit reviews, view details of item and its ratings, and filter shoes based on ratings and review count.",
-      image: "/review-website.png",
+      image: shoesReviewImage,
       github: "https://github.com/NorahNguyen94/review-website",
       techs: ["Laravel", "PHP", "JavaScript", "Bootstrap"],
       isPrivate: false,
@@ -38,7 +46,7 @@ function App() {
     {
       title: "Study With Me",
       desc: "The mobile app aims to assist students in organising their study schedules more effectively. It provides a platform where students can manage courses, assessments, class schedules and study tasks, therefore, enabling students to keep track and take control of their learning journey.",
-      image: "/study-with-me.jpg",
+      image: studyWithMeImage,
       github: "https://github.com/NorahNguyen94/study-with-me",
       techs: ["Angular", "Ionic", "Web Storage", "Git"],
       isPrivate: false,
@@ -46,7 +54,7 @@ function App() {
     {
       title: "Restaurant Website",
       desc: "A responsive web application that showcases various Vietnamese cuisines and allows users to explore our restaurant's menu, make reservations, place orders online and more. It offers a eye-catching and user-friendly interfaces for customers to engage with the restaurant.",
-      image: "/restaurant-website.png",
+      image: restaurantWebsiteImage,
       github: "https://github.com/NorahNguyen94/Restaurant-website",
       techs: ["HTML5", "PHP", "CSS3", "JavScript"],
       isPrivate: false,
@@ -54,7 +62,7 @@ function App() {
     {
       title: "Fake Store",
       desc: "A mobile application that allows users to browse and purchase products from a fake online store. It features product listings, detailed product views, a shopping cart, and a checkout process, providing a seamless shopping experience for users. It interacts with a public API to fetch product data and manage user orders.",
-      image: "/fake-store.png",
+      image: fakeStoreImage,
       github: "https://github.com/NorahNguyen94",
       techs: ["React Native", "CSS", "ResfulAPIs", "Git"],
       isPrivate: true,
@@ -65,7 +73,7 @@ function App() {
     <div className="min-h-screen bg-gradient-to-b from-gray-900 via-gray-800 to-black text-gray-100 font-sans">
       {/* Navbar */}
       <section className="flex flex-row justify-between items-center p-6 shadow-md bg-gray-900/80">
-        <a href="#"><img src="NN.png" alt="My logo" className="w-12 h-8" /></a>
+        <a href="#"><img src={logo} alt="My logo" className="w-12 h-8" /></a>
         <nav className="flex space-x-7 text-teal-300 font-medium tracking-wide">
           <a href="#home" className="border-b">Home</a>
           <a href="#about" className="hover:border-b">About</a>
@@ -246,7 +254,7 @@ function App() {
 
           <div className="md:w-1/3 flex justify-center">
             <img
-              src="/medical_system_image.PNG"
+              src={intershipImage}
               alt="Internship Project"
               className="mt-4 md:mt-0 rounded-xl shadow-lg w-full md:w-full 
                  group-hover:scale-[1.01] group-hover:shadow-2xl 
