@@ -1,3 +1,4 @@
+import { useState, useRef, useEffect } from "react";
 import { FaJava, FaPhp } from "react-icons/fa";
 import {
     SiJavascript, SiTypescript, SiHtml5, SiCss3, SiPython,
@@ -8,10 +9,40 @@ import {
 import { VscVscode } from "react-icons/vsc";
 
 export default function SkillCard({ name, color }) {
-    return (
-        <div className="group w-full h-62 [perspective:1000px] cursor-pointer">
-            <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
+    const [flipped, setFlipped] = useState(false);
+    const cardRef = useRef(null);
 
+    const toggleFlip = () => setFlipped(!flipped);
+
+    // Close card when clicking outside
+    useEffect(() => {
+        const handleClickOutside = (e) => {
+            if (cardRef.current && !cardRef.current.contains(e.target)) {
+                setFlipped(false);
+            }
+        };
+
+        document.addEventListener("mousedown", handleClickOutside);
+        document.addEventListener("touchstart", handleClickOutside);
+
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+            document.removeEventListener("touchstart", handleClickOutside);
+        };
+    }, []);
+
+    return (
+        <div
+            ref={cardRef}
+            className="group w-full h-62 [perspective:1000px] cursor-pointer"
+            onClick={toggleFlip}
+        >
+            <div
+                className={`relative w-full h-full transition-transform duration-700 
+                [transform-style:preserve-3d]
+                ${flipped ? "[transform:rotateY(180deg)]" : ""}
+                group-hover:[transform:rotateY(180deg)]`}
+            >
                 {/* FRONT */}
                 <div className="absolute w-full h-full flex flex-col items-center justify-center 
                       bg-gray-800/60 rounded-xl border border-gray-700 shadow-lg 

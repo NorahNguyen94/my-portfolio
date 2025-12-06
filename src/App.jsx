@@ -91,7 +91,13 @@ function App() {
             transition={{ duration: 0.8 }}
             className="text-5xl font-bold mb-3"
           >
-            Hi, I'm <span className="text-blue-400">Norah Nguyen</span>
+            Hi, I'm <span className="text-transparent bg-clip-text 
+                bg-gradient-to-r from-pink-500 via-purple-400 to-blue-400
+                drop-shadow-[0_0_5px_#d946ef]
+                drop-shadow-[0_0_10px_#8b5cf6]">
+              Norah Nguyen
+            </span>
+
           </motion.h1>
           <p className="text-lg text-gray-400">
             Junior Full-Stack Developer | Passionate about Web Development & Software Design
